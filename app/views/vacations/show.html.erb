@@ -1,0 +1,39 @@
+<p style="color: green"><%= notice %></p>
+<div class="p-1 m-1 rounded-3">
+  <div class="container-fluid">
+    <h1 class="fw-bold"><%= @vacation.first_name + " " + @vacation.last_name%></h1>
+    <div class="p-2">
+      <p class="col-md-8"><span class="fw-bold">Email:</span> <%= @vacation.email %></p>
+      <p class="col-md-8"><span class="fw-bold">Days:</span> <%= @vacation.vacation_days %> </p>
+      <p class="col-md-8"><span class="fw-bold">Starting:</span> <%= @vacation.starting_date %> </p>
+      <p class="col-md-8"><span class="fw-bold">Ending:</span> <%= @vacation.ending_date %> </p>
+    </div>
+  <%= link_to "Back to vacations", vacations_path, class:"btn btn-secondary btn-sm" %>
+  </div>
+</div>
+
+<%# <h1>SHOW Vacation</h1>
+<div id="vacations">
+  <table class="table">
+    <thead>
+      <tr class="table-dark">
+        <th scope="col">#</th>
+        <th scope="col">first_name</th>
+        <th scope="col">last_name</th>
+        <th scope="col">email</th>
+        <th scope="col">vacation_days</th>
+        <th scope="col">starting_date</th>
+        <th scope="col">ending_date</th>
+        <th scope="col">bonus</th>
+      </tr>
+    </thead>
+    <tbody> %>
+      <%# <%= render "show", vacation: @vacation %>
+    <%# </tbody>
+  </table>
+ </div>
+  %>
+
+
+
+

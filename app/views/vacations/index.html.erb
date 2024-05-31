@@ -1,0 +1,25 @@
+<p style="color: green"><%= notice %></p>
+<h1>Vacations</h1>
+<div id="vacations">
+  <table class="table table-hover">
+    <thead>
+      <tr class="table-dark ">
+        <th scope="col">First name</th>
+        <th scope="col">Last name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Vacation days</th>
+        <th scope="col">Starting date</th>
+        <th scope="col">Ending date</th>
+        <th scope="col">Bonus?</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+  <% @vacations.each do |vacation| %>
+    <%= render "show", vacation: vacation %>
+   <% end %>
+  </tbody>
+  <p><%= link_to "New vacation", new_vacation_path,class:"btn btn-secondary btn-sm" %></p>
+</div>
+
+

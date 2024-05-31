@@ -1,0 +1,97 @@
+<p style="color: green"><%= notice %></p>
+
+<form class="row gy-2 gx-3 align-items-center">
+  <div class="col-auto">
+    <label class="visually-hidden" for="autoSizingInput">Name</label>
+    <input type="text" class="form-control" id="autoSizingInput" placeholder="Jane Doe">
+  </div>
+  <div class="col-auto">
+    <label class="visually-hidden" for="autoSizingInputGroup">Username</label>
+    <div class="input-group">
+      <div class="input-group-text">@</div>
+      <input type="text" class="form-control" id="autoSizingInputGroup" placeholder="Username">
+    </div>
+  </div>
+  <div class="col-auto">
+    <label class="visually-hidden" for="autoSizingSelect">Preference</label>
+    <select class="form-select" id="autoSizingSelect">
+      <option selected>Choose...</option>
+      <option value="1">One</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+    </select>
+  </div>
+  <div class="col-auto">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="autoSizingCheck">
+      <label class="form-check-label" for="autoSizingCheck">
+        Remember me
+      </label>
+    </div>
+  </div>
+  <div class="col-auto">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+
+<div class="p-1 m-1 rounded-3 container-fluid ">
+  <div class="container-fluid ">
+    <%= form_with(model: vacation) do |form| %>
+      <% if vacation.errors.any? %>
+        <div style="color: red">
+          <h2><%= pluralize(vacation.errors.count, "error") %> prohibited this vacation from being saved:</h2>
+
+          <ul>
+            <% vacation.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+<div>
+    <div class="col-auto">
+      <%= form.label :first_name, style: "display: block", class: "visually-hidden", for: "autoSizingInput" %>
+      <%= form.text_field :first_name, class: "form-control", id: "autoSizingInput", placeholder: "First Name"  %>
+    </div>
+
+    <div class="col-auto">
+      <%= form.label :last_name, style: "display: block", class: "visually-hidden", for: "autoSizingInput" %>
+      <%= form.text_field :last_name, class: "form-control", id: "autoSizingInput", placeholder: "Last Name"  %>
+    </div>
+        
+    <div class="col-auto">
+      <%= form.label :email, style: "display: block", class: "visually-hidden", for: "autoSizingInput" %>
+      <%= form.text_field :email, class: "form-control", id: "autoSizingInput", placeholder: "Email"  %>
+    </div>
+
+    <div class="col-auto">
+      <%= form.label :vacation_days, style: "display: block",class: "visually-hidden", for:"autoSizingInputGroup" %>
+      <div class="input-group">
+        <div class="input-group-text">Days</div>
+        <%= form.number_field :vacation_days, class: "form-control", id: "autoSizingInputGroup", placeholder: "5-30" %>
+      </div>
+    </div>
+</div>  
+      <div>
+        <%= form.label :starting_date, style: "display: block" %>
+        <%= form.date_field :starting_date %>
+      </div>
+
+      <div>
+        <%= form.label :ending_date, style: "display: block" %>
+        <%= form.date_field :ending_date %>
+      </div>
+
+      <div>
+        <%= form.label :bonus, style: "display: block"%>
+        <%= form.check_box :bonus %> 
+      </div>
+
+      <div>
+        <%= form.submit %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
