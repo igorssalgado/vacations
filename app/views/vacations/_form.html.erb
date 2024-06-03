@@ -1,4 +1,3 @@
-<p style="color: green"><%= notice %></p>
 <div class="p-1 m-1 rounded-3" style="background-color: lightblue">
   <div class="container-fluid">
     <%= form_with(model: vacation) do |form| %>
@@ -39,7 +38,7 @@
     </div>
 
     <div class="form-group">
-      <%= form.submit class: 'btn btn-secondary btn-sm' %>
+      <%= form.submit class: 'btn btn-secondary btn-sm', value: "Save" %>
     </div>
     <% end %>
   </div>

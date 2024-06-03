@@ -1,9 +1,7 @@
 <h1>Add new vacation</h1>
-
-<%= render "form", vacation: @vacation %>
-
-<br>
-
-<div>
-  <%= link_to "Back to vacations", vacations_path, class:"btn btn-secondary btn-sm" %>
+<div class="container">
+  <div>
+    <%= render "form", vacation: @vacation %>
+    <%= link_to "Back", vacations_path, class:"btn btn-secondary btn-sm" %>
+  </div>
 </div>
